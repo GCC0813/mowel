@@ -9,7 +9,9 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
-    mavenCentral()
+    /*添加阿里云仓库*/
+    maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
+    jcenter()
 }
 
 dependencies {
