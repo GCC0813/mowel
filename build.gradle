@@ -13,8 +13,17 @@ repositories {
     maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
     jcenter()
 }
-
+//去掉不需要的配置
+configurations {
+    //compile.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    compile.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    compile.exclude module: 'logback-classic'
+    compile.exclude module: 'log4j-over-slf4j'
+    compile.exclude group: 'org.apache.tomcat', module: 'tomcat-jdbc'
+    compile.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
